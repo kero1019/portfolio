@@ -33,3 +33,47 @@ body {
 .shadow{
   text-shadow: 0 0 10px var(--blue-color), 0 0 20px var(--blue-color), 0 0 30px var(--blue-color), 0 0 40px var(--blue-color);
 }
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.content {
+  white-space: nowrap;
+  animation: move 20s linear infinite;
+}
+
+.content2 {
+  white-space: nowrap;
+  animation: move2 20s linear infinite;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes move2 {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+.avatar-wrapper {
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, #6e5cff, #4dd2ff);
+  box-shadow: 0 0 20px rgba(110, 92, 255, 0.6);
+  animation: glow 2s ease-in-out infinite alternate;
+  overflow: hidden; 
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 50px rgba(110, 92, 255, 0.4); }
+  100% { box-shadow: 0 0 50px rgba(110, 92, 255, 0.9); }
+}

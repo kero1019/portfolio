@@ -1,6 +1,8 @@
 import Navbar from "@/Components/Navbar";
 import "./globals.css";
 import Footer from "@/Components/Footer";
+import { MyProvider } from "@/Components/Context";
+
 
 export default function RootLayout({
   children,
@@ -12,10 +14,12 @@ export default function RootLayout({
       <body
         className={``}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <MyProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </MyProvider>
       </body>
-    </html>
+    </html >
   );
 }

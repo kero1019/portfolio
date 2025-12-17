@@ -16,8 +16,8 @@ import figmaLogo from "@/Assets/Images/Figma-logo.svg.png";
 import Cpp from "@/Assets/Images/ISO_C++_Logo.svg.png"
 export default function Skills() {
     return (
-        <div className="wrapper [&_div]:flex [&_div]:gap-5 [&_div]:items-center [&_div]:justify-between">
-            <h2 className="text-4xl text-(--white-color) my-5 " >Skills</h2>
+        <div className="wrapper [&_div]:flex [&_div]:gap-5 [&_div]:items-center [&_div]:justify-between my-20">
+            <h2 className="text-5xl text-(--white-color) my-5 font-bold text-center" >Skills</h2>
             <div className="content text-(--white-color) ">
                 <Skill color={"#e34c26"} name="HTML5" icon={<FaHtml5 />} />
                 <Skill color={"#4290f5"} name="CSS3" icon={<FaCss3 />} />
@@ -38,7 +38,7 @@ export default function Skills() {
                     <p className='text-3xl'>C++</p>
                     <Image src={Cpp} alt="C++ Logo" width={30} height={30} />
                 </div>
-                                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2">
                     <p className='text-3xl'>Figma</p>
                     <Image src={figmaLogo} alt="figma" width={25} height={25} />
                 </div>

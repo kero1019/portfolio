@@ -18,6 +18,21 @@ interface MyProviderProps {
 export const MyProvider: React.FC<MyProviderProps> = ({ children }) => {
     const [value, setValue] = useState<boolean>(true);
 
+    React.useEffect(() => {
+        // Load saved theme preference
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "light") {
+            setValue(false);
+        }
+    }, []);
+
+    React.useEffect(() => {
+        // Apply theme to document
+        const theme = value ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+    }, [value]);
+
     return (
         <MyContext.Provider value={{ value, setValue }}>
             {children}

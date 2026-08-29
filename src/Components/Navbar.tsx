@@ -7,6 +7,7 @@ export default function Navbar() {
     const context = useContext(MyContext);
     if (!context) throw new Error("Navbar must be used within MyProvider");
     const { value, setValue } = context;
+    
     return (
         <header className={`flex justify-between items-center ${value ? 'bg-(--second-background-color)' : 'bg-(--main-background-color)'} ${value ? 'text-(--white-color)' : 'text-(--white-color)'} py-5 px-40 fixed top-0 z-50 left-0 right-0`}>
             <h2 className='text-2xl font-bold cursor-pointer'>Kerolos Fayez</h2>

@@ -1,15 +1,15 @@
 // Projects.jsx
 import React from "react";
 import ProjectCard from "@/Components/ProjectCard";
-import template1Img from "@/assets/Images/template.png";
-import museumImg from "@/assets/Images/mus.png";
-import weatherImg from "@/assets/Images/weather.png";
-import ageCalcImg from "@/assets/Images/age.png";
-import tenziesImg from "@/assets/Images/tenzies.png";
-import airbnbImg from "@/assets/Images/arbian.png";
-import votingImg from "@/assets/Images/voting.png";
-import triviaImg from "@/assets/Images/travial.png";
-import vanlifeImg from "@/assets/Images/vanlife.png";
+import template1Img from "@/Assets/Images/template.png";
+import museumImg from "@/Assets/Images/mus.png";
+import weatherImg from "@/Assets/Images/weather.png";
+import ageCalcImg from "@/Assets/Images/age.png";
+import tenziesImg from "@/Assets/Images/tenzies.png";
+import airbnbImg from "@/Assets/Images/arbian.png";
+import votingImg from "@/Assets/Images/voting.png";
+import triviaImg from "@/Assets/Images/travial.png";
+import vanlifeImg from "@/Assets/Images/vanlife.png";
 
 
 const projects = [

@@ -50,7 +50,7 @@ const ContactMe = () => {
                         Send Me an Email
                     </a>
 
-                    <a href='https://wa.me/20112943059' target='_blank' rel="noopener noreferrer" className="flex items-center justify-center gap-3 rounded-full bg-[#00d95a] px-6 py-4 text-base font-bold text-white shadow-lg shadow-emerald-500/20 transition-all hover:bg-[#00c250] sm:px-8 sm:text-lg">
+                    <a href='https://wa.me/201080185165' target='_blank' rel="noopener noreferrer" className="flex items-center justify-center gap-3 rounded-full bg-[#00d95a] px-6 py-4 text-base font-bold text-white shadow-lg shadow-emerald-500/20 transition-all hover:bg-[#00c250] sm:px-8 sm:text-lg">
                         <MessageCircle size={20} />
                         Message on WhatsApp
                     </a>

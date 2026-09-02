@@ -52,7 +52,13 @@ function ToolsGroup({ hidden = false }: { hidden?: boolean }) {
             ))}
             <div className="flex shrink-0 items-center gap-3 whitespace-nowrap p-3 sm:gap-5 sm:p-5">
                 <p className='text-xl sm:text-3xl'>C++</p>
-                <Image src={Cpp} alt="C++ logo" width={28} height={28} className="h-6 w-6 shrink-0 sm:h-7 sm:w-7" />
+                <Image
+                    src={Cpp}
+                    alt="C++ logo"
+                    width={28}
+                    height={28}
+                    className="h-7 w-auto shrink-0 object-contain sm:h-8"
+                />
             </div>
             <div className="flex shrink-0 items-center gap-3 whitespace-nowrap p-3 sm:gap-5 sm:p-5">
                 <p className='text-xl sm:text-3xl'>Figma</p>

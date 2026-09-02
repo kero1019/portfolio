@@ -1,49 +1,89 @@
 import React from 'react'
+import type { IconType } from 'react-icons'
 import Skill from './Skill'
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3 } from "react-icons/fa";
-import { FaJs } from "react-icons/fa";
-import { SiTypescript } from "react-icons/si";
-import { SiNextdotjs } from "react-icons/si";
-import { SiReact } from "react-icons/si";
+import { FaBootstrap, FaCss3, FaGithub, FaHtml5, FaJs } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiSass } from "react-icons/si";
-import { FaGithub } from "react-icons/fa";
-import { SiPostman } from "react-icons/si";
-import { FaBootstrap } from "react-icons/fa";
+import { SiNextdotjs, SiPostman, SiReact, SiSass, SiTypescript } from "react-icons/si";
 import Image from "next/image";
 import figmaLogo from "@/Assets/Images/Figma-logo.svg.png";
 import Cpp from "@/Assets/Images/ISO_C++_Logo.svg.png"
-export default function Skills() {
+
+type SkillDefinition = {
+    name: string;
+    color: string;
+    icon: IconType;
+};
+
+const primarySkills: SkillDefinition[] = [
+    { name: "HTML5", color: "#e34c26", icon: FaHtml5 },
+    { name: "CSS3", color: "#4290f5", icon: FaCss3 },
+    { name: "JS", color: "#F7DF1E", icon: FaJs },
+    { name: "ReactJs", color: "#61DAFB", icon: SiReact },
+];
+
+const frameworkSkills: SkillDefinition[] = [
+    { name: "NextJs", color: "#FFFFFF", icon: SiNextdotjs },
+    { name: "TypeScript", color: "#3178C6", icon: SiTypescript },
+    { name: "Tailwind CSS", color: "#06B6D4", icon: RiTailwindCssFill },
+    { name: "SASS CSS", color: "#CC6699", icon: SiSass },
+];
+
+const toolSkills: SkillDefinition[] = [
+    { name: "Bootstrap", color: "#7952B3", icon: FaBootstrap },
+    { name: "Github", color: "#FFFFFF", icon: FaGithub },
+    { name: "Postman", color: "#FF6C37", icon: SiPostman },
+];
+
+function SkillGroup({ skills, hidden = false }: { skills: SkillDefinition[]; hidden?: boolean }) {
     return (
-        <div className="wrapper my-12 [&_div]:flex [&_div]:items-center [&_div]:justify-between [&_div]:gap-3 sm:my-20 sm:[&_div]:gap-5">
-            <h2 className="my-5 text-center text-3xl font-bold text-(--white-color) sm:text-5xl" >Skills</h2>
-            <div className="content text-(--white-color) ">
-                <Skill color={"#e34c26"} name="HTML5" icon={<FaHtml5 />} />
-                <Skill color={"#4290f5"} name="CSS3" icon={<FaCss3 />} />
-                <Skill color={"#F7DF1E"} name="JS" icon={<FaJs />} />
-                <Skill color={"#61DAFB"} name="ReactJs" icon={<SiReact />} />
+        <div aria-hidden={hidden || undefined} className="marquee-group flex min-w-screen shrink-0 items-center justify-around gap-3 px-3 sm:gap-5 sm:px-5">
+            {skills.map(({ name, color, icon: Icon }) => (
+                <Skill key={name} color={color} name={name} icon={<Icon />} />
+            ))}
+        </div>
+    );
+}
+
+function ToolsGroup({ hidden = false }: { hidden?: boolean }) {
+    return (
+        <div aria-hidden={hidden || undefined} className="marquee-group flex min-w-screen shrink-0 items-center justify-around gap-3 px-3 sm:gap-5 sm:px-5">
+            {toolSkills.map(({ name, color, icon: Icon }) => (
+                <Skill key={name} color={color} name={name} icon={<Icon />} />
+            ))}
+            <div className="flex shrink-0 items-center gap-3 whitespace-nowrap p-3 sm:gap-5 sm:p-5">
+                <p className='text-xl sm:text-3xl'>C++</p>
+                <Image src={Cpp} alt="C++ logo" width={28} height={28} className="h-6 w-6 shrink-0 sm:h-7 sm:w-7" />
             </div>
-            <div className="content2 text-(--white-color) ">
-                <Skill color={"#FFFFFF"} name="NextJs" icon={<SiNextdotjs />} />
-                <Skill color={"#3178C6"} name="TypeScript" icon={<SiTypescript />} />
-                <Skill color={"#06B6D4"} name="Tailwind CSS" icon={<RiTailwindCssFill />} />
-                <Skill color={"#CC6699"} name="SASS CSS" icon={<SiSass />} />
-            </div>
-            <div className="content text-(--white-color) ">
-                <Skill color={"#7952B3"} name="Bootstrap" icon={<FaBootstrap />} />
-                <Skill color={"#FFFFFF"} name="Github" icon={<FaGithub />} />
-                <Skill color={"#FF6C37"} name="Postman" icon={<SiPostman />} />
-                <div className="flex items-center gap-2">
-                    <p className='text-3xl'>C++</p>
-                    <Image src={Cpp} alt="C++ Logo" width={30} height={30} />
-                </div>
-                <div className="flex items-center gap-2">
-                    <p className='text-3xl'>Figma</p>
-                    <Image src={figmaLogo} alt="figma" width={25} height={25} />
-                </div>
+            <div className="flex shrink-0 items-center gap-3 whitespace-nowrap p-3 sm:gap-5 sm:p-5">
+                <p className='text-xl sm:text-3xl'>Figma</p>
+                <Image
+                    src={figmaLogo}
+                    alt="Figma logo"
+                    width={20}
+                    height={30}
+                    className="h-6 w-auto shrink-0 sm:h-7"
+                />
             </div>
         </div>
+    );
+}
 
-    )
+export default function Skills() {
+    return (
+        <section className="wrapper my-12 sm:my-20" aria-labelledby="skills-title">
+            <h2 id="skills-title" className="my-5 text-center text-3xl font-bold text-(--white-color) sm:text-5xl">Skills</h2>
+            <div className="content text-(--white-color)">
+                <SkillGroup skills={primarySkills} />
+                <SkillGroup skills={primarySkills} hidden />
+            </div>
+            <div className="content2 text-(--white-color)">
+                <SkillGroup skills={frameworkSkills} />
+                <SkillGroup skills={frameworkSkills} hidden />
+            </div>
+            <div className="content text-(--white-color)">
+                <ToolsGroup />
+                <ToolsGroup hidden />
+            </div>
+        </section>
+    );
 }

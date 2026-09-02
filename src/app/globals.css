@@ -55,9 +55,9 @@ body {
 .line {
 	background: linear-gradient(to right, var(--blue-color), var(--violet-color));
 }
-.shadow {
-	text-shadow: 0 0 10px var(--blue-color), 0 0 20px var(--blue-color),
-		0 0 30px var(--blue-color), 0 0 40px var(--blue-color);
+.text-glow {
+	text-shadow: 0 0 8px rgb(105 91 255 / 65%),
+		0 0 18px rgb(105 91 255 / 35%);
 }
 .wrapper {
 	overflow: hidden;
@@ -65,29 +65,35 @@ body {
 }
 
 .content {
+	display: flex;
+	width: max-content;
 	white-space: nowrap;
 	animation: move 20s linear infinite;
+	will-change: transform;
 }
 
 .content2 {
+	display: flex;
+	width: max-content;
 	white-space: nowrap;
 	animation: move2 20s linear infinite;
+	will-change: transform;
 }
 
 @keyframes move {
 	from {
-		transform: translateX(100%);
+		transform: translateX(0);
 	}
 	to {
-		transform: translateX(-100%);
+		transform: translateX(-50%);
 	}
 }
 @keyframes move2 {
 	from {
-		transform: translateX(-100%);
+		transform: translateX(-50%);
 	}
 	to {
-		transform: translateX(100%);
+		transform: translateX(0);
 	}
 }
 .avatar-wrapper {

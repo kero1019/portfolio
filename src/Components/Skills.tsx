@@ -6,7 +6,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { SiNextdotjs, SiPostman, SiReact, SiSass, SiTypescript } from "react-icons/si";
 import Image from "next/image";
 import figmaLogo from "@/Assets/Images/Figma-logo.svg.png";
-import Cpp from "@/Assets/Images/ISO_C++_Logo.svg.png"
+import Cpp from "@/Assets/Images/ISO_C++_Logo.svg.png";
 
 type SkillDefinition = {
     name: string;
@@ -57,6 +57,7 @@ function ToolsGroup({ hidden = false }: { hidden?: boolean }) {
                     alt="C++ logo"
                     width={28}
                     height={28}
+                    unoptimized
                     className="h-7 w-auto shrink-0 object-contain sm:h-8"
                 />
             </div>

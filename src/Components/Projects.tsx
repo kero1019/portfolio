@@ -25,9 +25,9 @@ const projects = [
 ];
 
 const Projects = () => {
-    return (<div className="my-50">
-        <h1 className="text-5xl font-bold text-(--white-color) my-10 text-center">Projects</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
+    return (<section id="projects" className="my-20 scroll-mt-28 sm:my-32">
+        <h2 className="my-8 text-center text-3xl font-bold text-(--white-color) sm:my-10 sm:text-5xl">Projects</h2>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
             {projects.map((project) => (
                 <ProjectCard
                     key={project.id}
@@ -38,7 +38,7 @@ const Projects = () => {
                 />
             ))}
         </div>
-    </div>
+    </section>
     );
 };
 

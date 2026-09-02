@@ -3,6 +3,7 @@
 	box-sizing: border-box;
 }
 :root {
+	scroll-behavior: smooth;
 	--main-background-color: oklch(0.21 0.04 266.37);
 	--white-color: oklch(0.98 0 0);
 	--blue-color: oklch(0.51 0.26 276.94);
@@ -12,19 +13,34 @@
 	--orange-color: oklch(79.5% 0.184 86.047);
 	--second-background-color: oklch(0.28 0.04 260.34);
 	--gray-color: oklch(70.4% 0.04 256.788);
+	--surface-border-color: oklch(0.38 0.04 260.34);
+	--interactive-background-color: oklch(0.32 0.04 260.34);
+	--interactive-hover-color: oklch(0.38 0.04 260.34);
+	--divider-color: oklch(0.4 0.04 260.34);
+	--tag-background-color: rgb(255 255 255 / 8%);
 }
 
 [data-theme="light"] {
-	--main-background-color: #ffffff;
-	--second-background-color: #f5f5f5;
-	--white-color: #1a1a1a;
-	--text-color: #333333;
-	--gray-color: #666666;
-	/* Keep accent colors the same */
+	--main-background-color: #f8faff;
+	--second-background-color: #ffffff;
+	--white-color: #182033;
+	--text-color: #4b5a70;
+	--gray-color: #4b5a70;
+	--surface-border-color: #dce3ef;
+	--interactive-background-color: #f0f4f9;
+	--interactive-hover-color: #e3eaf3;
+	--divider-color: #d3dce8;
+	--tag-background-color: #e8edf5;
 }
 
 body {
 	font-family: Arial, Helvetica, sans-serif;
+	overflow-x: hidden;
+}
+
+:focus-visible {
+	outline: 2px solid var(--blue-color);
+	outline-offset: 4px;
 }
 .active {
 	color: var(--blue-color);
@@ -92,7 +108,7 @@ body {
 	}
 }
 .about-section {
-	color: #fff;
+	color: var(--white-color);
 }
 
 /* ===== Title ===== */
@@ -139,7 +155,7 @@ body {
 .about-item p {
 	font-size: 18px;
 	line-height: 1.8;
-	color: #cfd6ff;
+	color: var(--text-color);
 }
 
 /* ===== Dots ===== */
@@ -166,7 +182,7 @@ body {
 }
 
 .tag {
-	background: rgba(255, 255, 255, 0.08);
+	background: var(--tag-background-color);
 	padding: 4px 10px;
 	border-radius: 6px;
 	margin: 0 4px;
@@ -187,4 +203,48 @@ body {
 
 .about-cta a:hover {
 	color: #6c4cff;
+}
+
+@media (max-width: 640px) {
+	.about-title {
+		font-size: 36px;
+		margin-bottom: 32px;
+	}
+
+	.about-content {
+		gap: 28px;
+		padding-left: 48px;
+	}
+
+	.about-content::before {
+		left: 20px;
+	}
+
+	.about-item p {
+		font-size: 16px;
+		line-height: 1.7;
+	}
+
+	.dot {
+		left: -35px;
+	}
+
+	.tag {
+		display: inline-block;
+		margin: 2px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
 }

@@ -16,8 +16,8 @@ import figmaLogo from "@/Assets/Images/Figma-logo.svg.png";
 import Cpp from "@/Assets/Images/ISO_C++_Logo.svg.png"
 export default function Skills() {
     return (
-        <div className="wrapper [&_div]:flex [&_div]:gap-5 [&_div]:items-center [&_div]:justify-between my-20">
-            <h2 className="text-5xl text-(--white-color) my-5 font-bold text-center" >Skills</h2>
+        <div className="wrapper my-12 [&_div]:flex [&_div]:items-center [&_div]:justify-between [&_div]:gap-3 sm:my-20 sm:[&_div]:gap-5">
+            <h2 className="my-5 text-center text-3xl font-bold text-(--white-color) sm:text-5xl" >Skills</h2>
             <div className="content text-(--white-color) ">
                 <Skill color={"#e34c26"} name="HTML5" icon={<FaHtml5 />} />
                 <Skill color={"#4290f5"} name="CSS3" icon={<FaCss3 />} />

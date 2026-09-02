@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About() {
     return (
-        <section className="about-section my-20">
+        <section id="about" className="about-section my-12 scroll-mt-28 sm:my-20">
             <h2 className="about-title">
                 About Me <span className="title-line"></span>
             </h2>
@@ -59,7 +59,7 @@ export default function About() {
                 <div className="about-cta">
                     <p>
                         Ready to collaborate on your next project?{" "}
-                        <a href="#contact">Contact with me</a>
+                        <a href="#contact">Contact me</a>
                     </p>
                 </div>
             </div>

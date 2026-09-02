@@ -6,7 +6,7 @@ interface SkillProps {
 } 
 export default function Skill({name,icon,color}:SkillProps) {
   return (
-    <div className='flex gap-5 items-center p-5 [&_p]:text-3xl'>
+    <div className='flex items-center gap-3 p-3 [&_p]:text-xl sm:gap-5 sm:p-5 sm:[&_p]:text-3xl'>
         <p className=''>{name}</p>
         <p style={{ color }}>{icon}</p>
     </div>
